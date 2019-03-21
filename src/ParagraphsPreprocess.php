@@ -45,7 +45,7 @@ class ParagraphsPreprocess {
     // Return an entity reference
     $nested_entity = !empty($content['field_another_node'][0]['#node']) ? $variables['content']['field_another_node'][0]['#node'] : NULL;
     if ($nested_entity) {
-      // Return the field_header value of of the entity reference.
+      // Return the field_header value of the entity reference.
       $variables['header'] = $nested_entity->field_header->value;
       // {{ header }}
     }
