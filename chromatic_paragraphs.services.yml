@@ -1,0 +1,3 @@
+services:
+  chromatic_paragraphs.paragraphs_preprocess:
+    class: Drupal\chromatic_paragraphs\ParagraphsPreprocess

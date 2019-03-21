@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Chromatic 2019 Paragraphs module file.
+ */
+
+/**
+ * Chromatic Paragraphs Preprocess Class.
+ */
+define('CHROMATIC_PARAGRAPHS_PREPROCESS_CLASS', 'chromatic_paragraphs.paragraphs_preprocess');
+
+/**
+ * Implements hook_theme().
+ */
+function chromatic_paragraphs_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__foo' => [
+      'base hook' => 'paragraph',
+      'variables' => [
+        'header' => NULL,
+        'text' => NULL,
+      ],
+      'path' => $path . '/templates/paragraph',
+    ],
+    'paragraph__bar' => [
+      'base hook' => 'paragraph',
+      'variables' => [
+        'header' => NULL,
+        'caption' => NULL,
+        'bar_class' => 'hardcoded-class',
+      ],
+      'path' => $path . '/templates/paragraph',
+    ],
+    'paragraph__block_quote' => [
+      'base hook' => 'paragraph',
+      'variables' => [
+        'citation' => NULL,
+        'quotation' => NULL,
+        'byline' => NULL,
+      ],
+      'path' => $path . '/templates/paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_paragraph__foo().
+ */
+function template_preprocess_paragraph__foo(&$variables) {
+  \Drupal::service(CHROMATIC_PARAGRAPHS_PREPROCESS_CLASS)->preprocessFoo($variables);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__bar().
+ */
+function template_preprocess_paragraph__bar(&$variables) {
+  \Drupal::service(CHROMATIC_PARAGRAPHS_PREPROCESS_CLASS)->preprocessBar($variables);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__block_quote().
+ */
+function template_preprocess_paragraph__block_quote(&$variables) {
+  \Drupal::service(CHROMATIC_PARAGRAPHS_PREPROCESS_CLASS)->preprocessBlockQuote($variables);
+}

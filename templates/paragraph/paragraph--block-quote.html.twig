@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Block Quote Template.
+ *
+ * Available variables:
+ * - citation: Citation link.
+ * - quotation: Quote field value.
+ * - byline: Byline for the quote.
+ *
+ * @see template_preprocess_paragraph__block_quote().
+ *
+ * @ingroup themeable
+ */
+#}
+<blockquote cite="{{ citation }}">
+  <p>{{ quotation }}</p>
+  <footer>
+    <cite><a href="{{ citation }}"> {{ byline }} </a></cite>
+  </footer>
+</blockquote>

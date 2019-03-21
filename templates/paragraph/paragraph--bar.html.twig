@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Bar Template.
+ *
+ * Available variables:
+ * - header: The header
+ * - content: Default content variable containing all fields & image.
+ * - caption: The Caption field (text)
+ * - bar_class: a hardcoded class from hook_theme.
+ *
+ * @see template_preprocess_paragraph__bar().
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="{{ bar_class }}">
+  <header class="bar-header">
+    <h2>{{ header }}</h2>
+  </header>
+  <div class="media__img">
+    <img src="{{ content.imageUrl }}" alt="{{ content.imageAlt }}">
+  </div>
+  <div class="bar-caption">
+    {{ caption }}
+  </div>
+</div>
