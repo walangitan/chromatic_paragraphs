@@ -14,7 +14,6 @@ class ParagraphsPreprocess {
    */
   public function preprocessFoo(array &$variables) {
     $content = $variables['content'];
-    // $variables['header'] = $content['field_name'][0]['#markup'];
     $variables['header'] = $content['field_header'][0]['#markup'];
     // {{ header }}
     $variables['text'] = $content['field_body'][0]['#text'];
